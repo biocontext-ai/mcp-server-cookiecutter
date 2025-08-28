@@ -1,0 +1,31 @@
+{
+    "project_name": "project-name",
+    "package_name": "{{ cookiecutter.project_name|lower|replace('-', '_') }}",
+    "project_description": "A very interesting piece of code",
+    "author_full_name": "Your Name",
+    "author_email": "yourname@example.com",
+    "github_user": "your_github_username",
+    "github_repo": "{{ cookiecutter.project_name }}",
+    "license": [
+        "MIT License",
+        "BSD 2-Clause License",
+        "BSD 3-Clause License",
+        "Apache License Version 2.0",
+        "GNU General Public License Version 3",
+        "Unlicense"
+    ],
+    "_copy_without_render": [
+        ".github/workflows/build.yaml",
+        ".github/workflows/test.yaml",
+        "docs/_templates/autosummary/**.rst"
+    ],
+    "__prompts__": {
+        "project_name": "Your project’s name",
+        "package_name": "If the Python package name differs from the project name, edit it now",
+        "project_description": "A short one-line description of what your project does",
+        "author_full_name": "Your complete name",
+        "author_email": "The e-mail address your package’s users can contact you under",
+        "github_user": "The GitHub username or org the project is to be published under",
+        "github_repo": "If the repo name should differ from the project name, edit it now"
+    }
+}

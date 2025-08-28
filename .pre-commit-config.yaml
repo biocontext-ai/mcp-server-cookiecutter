@@ -1,0 +1,30 @@
+repos:
+  # Hooks that are run everywhere
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      # - id: check-yaml
+      #   stages: [pre-commit]
+      # - id: check-toml
+      #   stages: [pre-commit]
+      - id: end-of-file-fixer
+        stages: [pre-commit]
+      - id: trailing-whitespace
+        stages: [pre-commit]
+      - id: requirements-txt-fixer
+        stages: [pre-commit]
+      - id: check-added-large-files
+        stages: [pre-commit]
+        args: ["--maxkb=50000"]
+      - id: check-case-conflict
+        stages: [pre-commit]
+      - id: mixed-line-ending
+        stages: [pre-commit]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.9
+    hooks:
+      - id: ruff-check
+        args: [--fix, --exit-non-zero-on-fix]
+        files: ^scripts/
+      - id: ruff-format
+        files: ^scripts/
