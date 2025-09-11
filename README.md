@@ -7,14 +7,14 @@ Cookiecutter template for a Python-based biomedical MCP server with [FastMCP](ht
 Use this template with `cookiecutter` by running:
 
 ```bash
-uvx cookiecutter git@github.com:biocontext-ai/mcp-server-cookiecutter.git
+uvx cookiecutter https://github.com/biocontext-ai/mcp-server-cookiecutter.git
 ```
 
 Alternatively, you can also install `cookiecutter` with `pip`:
 
 ```bash
 python3 -m pip install --user cookiecutter
-cookiecutter git@github.com:biocontext-ai/mcp-server-cookiecutter.git
+cookiecutter https://github.com/biocontext-ai/mcp-server-cookiecutter.git
 ```
 
 ## Publishing Your MCP Server
