@@ -1,4 +1,3 @@
-
 from importlib.metadata import version
 
 from {{cookiecutter.package_name}}.main import run_app

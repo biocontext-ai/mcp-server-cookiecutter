@@ -3,7 +3,7 @@ build-backend = "hatchling.build"
 requires = [ "hatchling" ]
 
 [project]
-name = "{{ cookiecutter.project_name }}"
+name = "{{ cookiecutter.package_name }}"
 version = "0.0.1"
 description = "{{ cookiecutter.project_description }}"
 readme = "README.md"
@@ -94,7 +94,7 @@ matrix.deps.env-vars = [
 
 [tool.ruff]
 line-length = 120
-src = [ "src" ]
+src = [ "src/{{ cookiecutter.package_name }}" ]
 extend-include = [ "*.ipynb" ]
 
 format.docstring-code-format = true

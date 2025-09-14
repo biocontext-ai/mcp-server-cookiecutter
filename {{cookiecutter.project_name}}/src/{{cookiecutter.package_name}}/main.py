@@ -4,10 +4,12 @@ import sys
 
 import click
 
-from .tools import * # noqa: F403 import all tools to register them
+from .tools import *  # noqa: F403 import all tools to register them
 
 
 class EnvironmentType(enum.Enum):
+    """Enum to define environment type."""
+
     PRODUCTION = enum.auto()
     DEVELOPMENT = enum.auto()
 
@@ -28,16 +30,11 @@ def run_app(
     """Main function to run the MCP server "{{cookiecutter.project_name}}".
 
     {{cookiecutter.project_description}}
-
     If the environment variable MCP_ENVIRONMENT is set to "PRODUCTION", it will run the Starlette app with streamable HTTP for the MCP server. Otherwise, it will run the MCP server via stdio.
-
     The port is set via "-p/--port" or the MCP_PORT environment variable, defaulting to "8000" if not set.
-
     The hostname is set via "-h/--host" or the MCP_HOSTNAME environment variable, defaulting to "0.0.0.0" if not set.
-
     To specify to transform method of the MCP server, set "-e/--env" or the MCP_TRANSPORT environment variable, which defaults to "stdio".
     """
-
     if version is True:
         from {{cookiecutter.package_name}} import __version__
         click.echo(__version__)
