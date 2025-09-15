@@ -5,10 +5,14 @@ from {{cookiecutter.package_name}}.mcp import mcp
 def greet(name: str) -> str:
     """Greeting function.
 
-    Params:
-        name (str): Name of person to greet.
+    Parameters
+    ----------
+    name : str
+        Name of person to greet.
 
-    Returns: Greetings.
-    ReturnType: str
+    Returns
+    -------
+    str
+        Greetings.
     """
     return f"Hello, {name}!"

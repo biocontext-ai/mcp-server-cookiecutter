@@ -27,7 +27,7 @@ def run_app(
     environment: EnvironmentType = EnvironmentType.DEVELOPMENT,
     version: bool = False,
 ):
-    """Main function to run the MCP server "{{cookiecutter.project_name}}".
+    """Run the MCP server "{{cookiecutter.project_name}}".
 
     {{cookiecutter.project_description}}
     If the environment variable MCP_ENVIRONMENT is set to "PRODUCTION", it will run the Starlette app with streamable HTTP for the MCP server. Otherwise, it will run the MCP server via stdio.
