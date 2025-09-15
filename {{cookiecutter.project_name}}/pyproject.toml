@@ -94,7 +94,7 @@ matrix.deps.env-vars = [
 
 [tool.ruff]
 line-length = 120
-src = [ "src/{{ cookiecutter.package_name }}" ]
+src = [ "src" ]
 extend-include = [ "*.ipynb" ]
 
 format.docstring-code-format = true
@@ -133,6 +133,7 @@ lint.per-file-ignores."tests/*" = [ "D" ]
 lint.pydocstyle.convention = "numpy"
 
 [tool.pytest.ini_options]
+pythonpath = "src"
 testpaths = [ "tests" ]
 python_files = "test_*.py"
 python_functions = "test_*"
