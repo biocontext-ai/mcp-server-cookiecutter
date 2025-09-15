@@ -3,8 +3,9 @@
 ```
 
 ```{toctree}
-:hidden: true
-:maxdepth: 1
+:caption: API Documentation
+:maxdepth: 2
+:glob:
 
-api.md
+autoapi/{{cookiecutter.package_name}}/index
 ```
