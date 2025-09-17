@@ -1,5 +1,3 @@
-
-
 from fastmcp import FastMCP
 
 mcp: FastMCP = FastMCP(
