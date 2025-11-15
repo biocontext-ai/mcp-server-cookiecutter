@@ -23,35 +23,83 @@ If you don't have Python installed, we recommend installing [uv][].
 
 There are several alternative options to install {{ cookiecutter.project_name }}:
 
-1. Use `uvx` to run it immediately:
-
+### 1. Use `uvx` to run it immediately
+After publication to PyPI:
 ```bash
 uvx {{ cookiecutter.package_name }}
 ```
 
-2. Include it in one of various clients that supports the `mcp.json` standard, please use:
+Or from a Git repository:
+
+```bash
+uvx git+https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.github_repo }}.git@main
+```
+
+### 2. Include it in one of various clients that supports the `mcp.json` standard
+
+If your MCP server is published to PyPI, use the following configuration:
 
 ```json
 {
   "mcpServers": {
-    "server-name": {
+    "{{ cookiecutter.github_repo }}": {
       "command": "uvx",
-      "args": ["{{ cookiecutter.package_name }}"],
-      "env": {
-        "UV_PYTHON": "3.12" // or required version
-      }
+      "args": ["{{ cookiecutter.package_name }}"]
+    }
+  }
+}
+```
+In case the MCP server is not yet published to PyPI, use this configuration:
+
+```json
+{
+  "mcpServers": {
+    "{{ cookiecutter.github_repo }}": {
+      "command": "uvx",
+      "args": ["git+https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.github_repo }}.git@main"]
     }
   }
 }
 ```
 
-3. Install it through `pip`:
+For purely local development (e.g., in Cursor or VS Code), use the following configuration:
+
+```json
+{
+  "mcpServers": {
+    "{{ cookiecutter.github_repo }}": {
+      "command": "uvx",
+      "args": [
+        "--refresh",
+        "--from",
+        "path/to/repository",
+        "{{ cookiecutter.package_name }}"
+      ]
+    }
+  }
+}
+```
+
+If you want to reuse and existing environment for local development, use the following configuration:
+
+```json
+{
+  "mcpServers": {
+    "{{ cookiecutter.github_repo }}": {
+      "command": "uv",
+      "args": ["run", "--directory", "path/to/repository", "{{ cookiecutter.package_name }}"]
+    }
+  }
+}
+```
+
+### 3. Install it through `pip`:
 
 ```bash
 pip install --user {{ cookiecutter.package_name }}
 ```
 
-4. Install the latest development version:
+### 4. Install the latest development version:
 
 ```bash
 pip install git+https://github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.github_repo }}.git@main
