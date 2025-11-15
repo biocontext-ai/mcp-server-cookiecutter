@@ -62,14 +62,19 @@ In case the MCP server is not yet published to PyPI, use this configuration:
 }
 ```
 
-For purely local development, use the following configuration:
+For purely local development (e.g., in Cursor or VS Code), use the following configuration:
 
 ```json
 {
   "mcpServers": {
     "{{ cookiecutter.github_repo }}": {
       "command": "uvx",
-      "args": ["--from", "path/to/repository", "{{ cookiecutter.package_name }}"]
+      "args": [
+        "--refresh",
+        "--from",
+        "path/to/repository",
+        "{{ cookiecutter.package_name }}"
+      ]
     }
   }
 }
